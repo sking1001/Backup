@@ -1,30 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FireballProgrammer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="lib\SiliconLabs\slabhidtouart.h" />
-    <ClInclude Include="lib\SiliconLabs\CP2114_Common.h" />
-    <ClInclude Include="lib\SiliconLabs\SLABCP2110.h" />
-    <ClInclude Include="lib\SiliconLabs\SLABCP2114.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Include\slabhidtouart.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SLABCP2114.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SLABCP2110.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CP2114_Common.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="FireballProgrammer.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClCompile Include="FireballProgrammer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FireballProgrammer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{3e95544e-c1f9-4033-801d-ca562f45a4d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{7698e578-4576-4961-aa90-044cf20dc073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\x86">
+      <UniqueIdentifier>{e870fc0b-d722-4841-b305-dfc29af01d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\x64">
+      <UniqueIdentifier>{72d80ca9-5794-4221-a2dd-f3ec55b5caf1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Lib\x86\SLABHIDDevice.dll">
+      <Filter>Lib\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Lib\x64\SLABHIDDevice.dll">
+      <Filter>Lib\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Lib\x86\SLABHIDtoUART.dll">
+      <Filter>Lib\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Lib\x64\SLABHIDtoUART.dll">
+      <Filter>Lib\x64</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
