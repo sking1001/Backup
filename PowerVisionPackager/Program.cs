@@ -85,8 +85,9 @@ namespace PowerVisionPackager
                 // Now create a PowerVision package for each subdirectory in the embedded binaries directory
                 foreach (DirectoryInfo subDir in new DirectoryInfo(args[0]).GetDirectories())
                 {
-                    Console.WriteLine($"Packaging {subDir.FullName}...");
+                    Console.Write($"Packaging {subDir.FullName}...");
                     PackageDir(subDir.FullName);
+                    Console.WriteLine();
                 }
             }
             catch (Exception ex)
