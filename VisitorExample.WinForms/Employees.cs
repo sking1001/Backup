@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 namespace VisitorExample
 {
     /// <summary>
+    /// The 'Element' abstract class
+    /// </summary>
+    abstract class Element
+    {
+        public abstract void Accept(IVisitor visitor);
+    }
+
+    /// <summary>
     /// The 'ConcreteElement' class
     /// </summary>
-    class Employee
+    class Employee : Element
     {
         public Employee(string name, double income, int vacationDays)
         {
@@ -31,6 +39,11 @@ namespace VisitorExample
         public string Name { get; set; }
         public double Income { get; set; }
         public int VacationDays { get; set; }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 
     /// <summary>
@@ -66,25 +79,13 @@ namespace VisitorExample
             employees.Clear();
         }
 
-        ///////////////////////////////////
-        // Modify All Employees
-        public void GiveRaises()
+        public void Accept(IVisitor visitor)
         {
             foreach (Employee e in employees)
             {
-                e.Income *= 1.10;
+                e.Accept(visitor);
             }
         }
-
-        public void IncreaseVacations()
-        {
-            foreach (Employee e in employees)
-            {
-                e.VacationDays += 3;
-            }
-        }
-
-        // etc....
     }
 
     // Three employee types

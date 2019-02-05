@@ -49,13 +49,13 @@ namespace VisitorExample
 
         private void GiveRaisesButton_Click(object sender, EventArgs e)
         {
-            employees.GiveRaises();
+            employees.Accept(new IncomeVisitor());
             ShowEmployeeInfo();
         }
 
         private void IncreaseVacationsButton_Click(object sender, EventArgs e)
         {
-            employees.IncreaseVacations();
+            employees.Accept(new VacationVisitor());
             ShowEmployeeInfo();
         }
 
